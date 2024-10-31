@@ -37,11 +37,11 @@ func TestCalculateMatch(t *testing.T) {
 	}
 }
 
-func floor(value float64, accuracy int) float64 {
+func floor(value float64) float64 {
 	mp := math.Pow(10, 2)
 	return math.Floor(value*mp) / mp
 }
 
 func isEqual(a, b float64) bool {
-	return floor(a, accuracy) == floor(b, accuracy)
+	return floor(a) == floor(b)
 }

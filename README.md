@@ -1,6 +1,12 @@
 # Go-Glicko2
 
-A forked Go implementation of [Glicko2 rating system](http://www.glicko.net/glicko.html).
+A Go implementation of [Glicko2 rating system](http://www.glicko.net/glicko.html).
+
+What's different about this fork?
+
+- Accepted some PRs that included mathematical fixes.
+- Rating data is exported and serializable.
+- System allows for configurable defaults and additional tuning.
 
 ## Installation
 
