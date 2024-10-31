@@ -47,10 +47,10 @@ func (period *RatingPeriod) Calculate() {
 			dp := delta(player)
 			delta := v * dp
 
-			sigmaP := sigmaP(delta, player.pre.sigma, player.pre.phi, v, period.tau)
-			phiS := phiA(player.pre.phi, sigmaP)
+			sigmaP := sigmaP(delta, player.pre.Sigma, player.pre.Phi, v, period.tau)
+			phiS := phiA(player.pre.Phi, sigmaP)
 			phiP := phiP(phiS, v)
-			muP := muP(player.pre.mu, phiP, dp)
+			muP := muP(player.pre.Mu, phiP, dp)
 			player.post.Update(muP, phiP, sigmaP)
 		} else {
 			player.post.Touch()
@@ -64,8 +64,8 @@ func v(player *Player) float64 {
 	for _, match := range player.matches {
 		opponent := match.opponentFor(player)
 
-		g := g(opponent.pre.phi)
-		E := e(player.pre.mu, opponent.pre.mu, opponent.pre.phi)
+		g := g(opponent.pre.Phi)
+		E := e(player.pre.Mu, opponent.pre.Mu, opponent.pre.Phi)
 		vj := g * g * E * (1 - E)
 		v += vj
 	}
@@ -86,9 +86,9 @@ func delta(player *Player) float64 {
 	outcomeBasedRating := 0.0
 	for _, match := range player.matches {
 		opponent := match.opponentFor(player)
-		ophi := g(opponent.pre.phi)
+		ophi := g(opponent.pre.Phi)
 		sc := float64(match.resultFor(player))
-		e := e(player.pre.mu, opponent.pre.mu, opponent.pre.phi)
+		e := e(player.pre.Mu, opponent.pre.Mu, opponent.pre.Phi)
 
 		outcomeBasedRating += ophi * (sc - e)
 	}
