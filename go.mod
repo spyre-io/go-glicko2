@@ -1,3 +1,3 @@
-module github.com/zelenin/go-glicko2
+module github.com/spyre-io/go-glicko2
 
-go 1.12
+go 1.21

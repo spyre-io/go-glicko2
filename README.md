@@ -1,10 +1,10 @@
 # Go-Glicko2
 
-A Go implementation of [Glicko2 rating system](http://www.glicko.net/glicko.html)
+A forked Go implementation of [Glicko2 rating system](http://www.glicko.net/glicko.html).
 
 ## Installation
 
-```go get -u github.com/zelenin/go-glicko2```
+```go get -u github.com/spyre-io/go-glicko2```
 
 ## Usage
 
@@ -13,7 +13,7 @@ package main
 
 import (
     "fmt"
-    "github.com/zelenin/go-glicko2"
+    "github.com/spyre-io/go-glicko2"
 )
 
 func main() {
@@ -36,7 +36,3 @@ func main() {
     fmt.Printf("Player #4 rating: %0.2f\n", player4.Rating().R())
 }
 ```
-
-## Author
-
-[Aleksandr Zelenin](https://github.com/zelenin/), e-mail: [aleksandr@zelenin.me](mailto:aleksandr@zelenin.me)
